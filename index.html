@@ -86,17 +86,22 @@
               Ефективні рішення для <br />
               вашого бізнесу
             </h1>
-          </div>
-            <button class="button order-button data-modal-open" type="button">
-              Замовити послугу
-            </button>
 
-            <div class="backdrop is-hidden data-modal">
-              <div class="modal">
-                <!-- <p>lorem</p> -->
-                <button class="data-modal-close">Закрити</button>
-              </div>
-            </div>
+              <button class="button order-button" type="button"  data-modal-open>
+                Замовити послугу
+              </button>
+
+              <!-- <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                  <p>lorem</p> 
+                  <button class="data-modal-close">
+                    Закрити
+                    <svg class="close-button"  width="30" height="30">
+                    <use href="./images/close.svg"></use>
+                    </svg>
+                  </button>
+                </div> -->
+
         </div>
       </section>
 
@@ -518,6 +523,10 @@
 
       </div>
     </footer>
+
+    <div class="modal-backdrop is-hidden" data-modal>
+      <div class="close-sign" data-modal-close>X</div>
+    </div>
 
     <script src="./js/modal.js"></script>
 
