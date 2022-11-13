@@ -328,7 +328,7 @@ a.current {
   width: 528px;
   height: 581px;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%,-50%) scale(1);
   transition: transform 250ms linear;
