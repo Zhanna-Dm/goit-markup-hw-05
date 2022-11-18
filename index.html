@@ -58,8 +58,8 @@
             >
             <svg class="header-contact-icon header-tel-icon" width="16" height="12">
                 <use href="./images/symbol-defs.svg#envelope"></use>
-              </svg>
-            <span> info@devstudio.com</span>
+            </svg>
+              info@devstudio.com
             </a>
           </li>
           <li class="header-list-item">
@@ -70,7 +70,7 @@
               <svg class="header-contact-icon header-mail-icon" width="10" height="16">
                 <use href="./images/symbol-defs.svg#smartphone"></use>
               </svg>
-              <span>+38 096 111 11 11</span> 
+              +38 096 111 11 11
             </a>
           </li>
         </ul>
@@ -81,27 +81,16 @@
       <!--Шапка-->
       <section class="main-banner">
         <div class="container hero-box">
-          <div class="container main-banner-text">
+          <!-- <div class="container main-banner-text"> -->
             <h1>
               Ефективні рішення для <br />
               вашого бізнесу
             </h1>
 
-              <button class="button order-button" type="button"  data-modal-open>
-                Замовити послугу
-              </button>
-
-              <!-- <div class="backdrop is-hidden" data-modal>
-                <div class="modal">
-                  <p>lorem</p> 
-                  <button class="data-modal-close">
-                    Закрити
-                    <svg class="close-button"  width="30" height="30">
-                    <use href="./images/close.svg"></use>
-                    </svg>
-                  </button>
-                </div> -->
-
+            <button class="button order-button" type="button"  data-modal-open>
+              Замовити послугу
+            </button>
+          <!-- </div> -->
         </div>
       </section>
 
@@ -171,31 +160,48 @@
 
           <ul class="activity-images">
             <li>
-              <img
+              <div class="activity-image-item">
+                <img
                 src="images/box1.jpg"
                 alt="зображення 1"
                 class="photo"
                 width="370"
                 height="294"
-              />
+               />
+                <div class="our-activity-description">
+                  <p>Десктопні додатки</p>
+                </div>
+              </div>
             </li>
+
             <li>
-              <img
+               <div class="activity-image-item">
+                <img
                 src="images/box2.jpg"
                 alt="зображення 2"
                 class="photo"
                 width="370"
                 height="294"
-              />
+               />
+                <div class="our-activity-description">
+                  <p>Мобільні додатки</p>
+                </div>
+              </div>
             </li>
+
             <li>
-              <img
+               <div class="activity-image-item">
+                <img
                 src="images/box3.jpg"
                 alt="зображення 3"
                 class="photo"
                 width="370"
                 height="294"
-              />
+               />
+                <div class="our-activity-description">
+                  <p>Дизайнерські рішення</p>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -526,9 +532,9 @@
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button data-modal-close>
-          <svg class="close-icon" width="30" height="30">
-            <use href="./images/close-black-18dp.svg"></use>
+        <button data-modal-close class="close-sign">
+          <svg  width="30" height="30">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
           </svg>
         </button>
       </div>
