@@ -321,7 +321,7 @@ a.current {
   left: 0;
   right: 0;
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 250ms, visibility 250ms;
 }
 
@@ -331,12 +331,12 @@ a.current {
 
 .modal {
   position: absolute;
-  width: 528px;
-  height: 581px;
+  width: 528;
+  /* height: 581px; */
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%) scale(1);
-  transition: transform 250ms linear;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   background-color: var(--main-background-color);
   border-radius: 4px;
@@ -354,6 +354,14 @@ a.current {
   cursor: pointer;
   padding: 0;
   border-radius: 50%;
+
+  fill: black;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal .close-sign:hover,
+.modal .close-sign:focus {
+  fill: var(--link-hover-color);
 }
 
 .is-hidden {
@@ -362,6 +370,210 @@ a.current {
   pointer-events: none;
 }
 
+/* Modal widnow content */
+
+textarea {
+  resize: none;
+}
+
+.form {
+  padding-left: 41px;
+  padding-right: 39px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin: 0;
+}
+
+.form-field:last-child {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  margin-bottom: 4px;
+  margin-top: 10px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: var(--text-grey-color);
+}
+
+/* svg */
+
+.modal-icon {
+  position: absolute;
+  top: 60%;
+  left: 22px;
+  transform: translate(-50%);
+  fill: var(--main-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* input */
+
+.form-field input,
+.form-field textarea {
+  margin: 0;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: var(--text-grey-color);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field input {
+    padding: 11px 12px 11px 42px;
+}
+
+.form-field textarea {
+  padding: 11px 12px;
+}
+
+.modal-icon use {
+  fill: var(--main-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus + .modal-icon use {
+  fill: var(--link-hover-color);
+}
+
+.form-input:focus {
+  outline:none;
+  border-color: var(--link-hover-color);
+}
+
+
+.form-field input::placeholder {
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.policy {
+  margin-bottom: 12px;
+  margin-left: 35px;
+  text-align: center;
+}
+
+.modal p {
+  padding: 15px;
+}
+
+.modal p,
+.policy {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  letter-spacing: 0.03em;
+}
+
+/* checkbox policy */
+
+.agreement-checkbox {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+
+.checkbox-label { 
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.checkbox:checked +.checkbox-icon {
+  background-color:var(--link-hover-color);
+  background-image: url('../images/icons/icon-check.svg');
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--link-hover-color);
+}
+
+
+.agreement-checkbox:focus-within .modal-checkbox-active {
+ opacity: 1;
+ transform: translateY(0px);
+}
+
+/* policy link and text */
+
+.agreement-checkbox label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+  color: var(--text-grey-color);
+}
+
+.agreement-checkbox a {
+  text-decoration-line: underline;
+  color: var(--link-hover-color);
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+  color: var(--main-background-color);
+  
+  background-color: var(--link-hover-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agreement-checkbox  {
+  margin-bottom: 30px;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  background-color: var(--button-hover-background);
+}
 
 /* -Особливості- */
 
@@ -728,7 +940,7 @@ address {
   background-color: var(--link-hover-color);
 }
 
-.footer-block-soclinks p {
+.footer-block-item p {
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
@@ -737,6 +949,68 @@ address {
   text-transform: uppercase;
   color: var(--main-background-color);
 }
+
+/* Footer subscription block */
+
+.footer-block-subsctiption {
+  margin-left: auto;
+}
+
+.subscription-line {
+  display: flex;
+}
+
+.subscription-line label {
+  margin: 0;
+}
+
+.subscription-line input {
+  width: 358px;
+  height: 50px;
+  padding: 15px;
+  margin-right: 12px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  background-color: var(--background-second-color);
+}
+
+.subscription-line input::placeholder {
+  display: flex;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.submit-button {
+  padding: 10px 24px ;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscription-icon {
+  margin-left: 10px;
+  background-size: contain;
+  fill: var(--main-background-color);
+
+}
+
+
+/* __________________ */
 
 /* Portfolio page */
 
