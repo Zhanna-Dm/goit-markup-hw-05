@@ -652,6 +652,7 @@ textarea {
   bottom: 0;
   right: 0;
   display: flex;
+  width: 100%;
 
   width: 370px;
   height: 70px;
